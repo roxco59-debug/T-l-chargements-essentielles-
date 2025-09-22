@@ -1,0 +1,121 @@
+body { font-family: Arial, sans-serif; margin: 20px; background: #eef4ff; } h1 { color: #003366; } select { padding: 8px; margin-bottom: 20px; } .bloc { display: none; border-left: 5px solid #003366; background: #fff; padding: 15px; margin-bottom: 20px; box-shadow: 0 0 5px rgba(0,0,0,0.1); } .bloc.visible { display: block; } h2 { margin-top: 0; } ul { padding-left: 20px; } li { margin-bottom: 5px; } .categorie { font-weight: bold; margin-top: 10px; color: #003366; } 
+
+🔍 Filtrer les usages informatiques
+
+Choisissez une catégorie : -- Toutes --Utilisation professionnelleUtilisation personnelle et loisirsUtilisation éducativeUtilisation domestiqueUtilisation spécialisée 
+
+💼 Utilisation professionnelle
+
+Bureautique
+
+Traitement de texte, tableurs, présentations, e-mails
+
+Exemples : Microsoft Office, LibreOffice
+
+Développement logiciel
+
+Programmation, compilation, tests
+
+Exemples : VS Code, Git, Docker
+
+Graphisme et design
+
+Retouche photo, création visuelle, mise en page
+
+Exemples : Photoshop, Illustrator, Canva
+
+Modélisation 3D / CAO
+
+Architecture, ingénierie, impression 3D
+
+Exemples : AutoCAD, SolidWorks, Blender
+
+Montage vidéo / audio
+
+Production multimédia
+
+Exemples : Premiere Pro, DaVinci Resolve, Audacity
+
+Analyse de données / IA
+
+Traitement de gros volumes, machine learning
+
+Exemples : Python, R, Jupyter
+
+🎮 Utilisation personnelle et loisirs
+
+Jeux vidéo
+
+PC gamer avec GPU dédié
+
+Exemples : Steam, Epic Games
+
+Streaming et multimédia
+
+Films, musique, podcasts
+
+Exemples : Netflix, VLC, Spotify
+
+Navigation web et réseaux sociaux
+
+Usage quotidien
+
+Exemples : Chrome, Firefox, LinkedIn, Instagram
+
+Création artistique
+
+Dessin numérique, musique assistée par ordinateur
+
+Exemples : Krita, FL Studio
+
+🎓 Utilisation éducative
+
+Apprentissage en ligne
+
+Cours, MOOC, certifications
+
+Exemples : Moodle, Coursera, Khan Academy
+
+Recherche et rédaction
+
+Mémoire, thèse, documentation
+
+Exemples : Zotero, Word, LaTeX
+
+Simulation et formation technique
+
+Environnements virtuels, logiciels spécialisés
+
+🏠 Utilisation domestique
+
+Gestion familiale
+
+Budget, planning, stockage de documents
+
+Domotique et contrôle
+
+Pilotage de maison connectée
+
+Télétravail
+
+Visioconférence, accès distant
+
+Exemples : Zoom, Teams, AnyDesk
+
+🧩 Utilisation spécialisée
+
+Serveurs et hébergement
+
+Web, cloud, base de données
+
+Exemples : Apache, Nginx, MySQL
+
+Ordinateurs embarqués / industriels
+
+Contrôle de machines, IoT
+
+Ordinateurs de poche / mini-PC
+
+Raspberry Pi, usage mobile ou discret
+
+const select = document.getElementById('filtre'); const blocs = document.querySelectorAll('.bloc'); select.addEventListener('change', function() { const type = this.value; blocs.forEach(el => { el.classList.remove('visible'); if (!type || el.dataset.type === type) { el.classList.add('visible'); } }); }); // Affiche tout au chargement select.dispatchEvent(new Event('change')); 
