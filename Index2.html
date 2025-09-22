@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Télécharge Essentiel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background: #121212; color: #f0f0f0; padding: 20px; }
+    h1, h2 { text-align: center; margin-bottom: 20px; }
+    nav { text-align: center; margin-bottom: 30px; }
+    nav a { color: #00c853; font-weight: bold; text-decoration: none; }
+    .category { margin-bottom: 40px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .card { background: #1e1e1e; padding: 15px; border-radius: 10px; border: 1px solid #333; }
+    .card label { display: flex; align-items: center; font-weight: 600; }
+    .card input[type="checkbox"] { margin-right: 10px; transform: scale(1.2); }
+    .card p { font-size: 0.95em; color: #aaa; margin-top: 5px; }
+  </style>
+</head>
+<body>
+  <h1>🛠️ Télécharge Essentiel</h1>
+  <nav><a href="extras.html">➡️ Voir plus de logiciels</a></nav>
+
+  <!-- Sécurité -->
+  <section class="category">
+    <h2>🔐 Sécurité</h2>
+    <div class="grid">
+      <div class="card"><label><input type="checkbox" onclick="autoDownload(this, 'https://files.avast.com/iavs9x/avast_free_antivirus_setup_offline.exe')"> Avast</label><p>Antivirus gratuit</p></div>
+      <div class="card"><label><input type="checkbox" onclick="autoDownload(this, 'https://download.bitdefender.com/windows/installer/fr-fr/bitdefender.exe')"> Bitdefender</label><p>Protection avancée</p></div>
+      <div class="card"><label><input type="checkbox" onclick="autoDownload(this, 'https://downloads.malwarebytes.com/file/mb-windows')"> Malwarebytes</label><p>Anti-malware</p></div>
+      <div class="card"><label><input type="checkbox" onclick="autoDownload(this, 'https://download.ccleaner.com/ccsetup.exe')"> CCleaner</label><p>Nettoyage système</p></div>
+    </div>
+  </section>
+
+  <!-- Bureautique -->
+  <section class="category">
+    <h2>📝 Bureautique</h2>
+    <div class="grid">
+      <div class="card"><label><input type="checkbox" onclick="autoDownload(this, 'https://download.documentfoundation.org/libreoffice/stable/7.6.2/win/x86_64/LibreOffice_7.6.2_Win_x64.msi')"> LibreOffice</label><p>Suite bureautique</p></div>
+      <div class="card"><label><input type="checkbox" onclick="autoDownload(this, 'https://www.onlyoffice.com/download-desktop.aspx')"> OnlyOffice</label><p>Alternative Office</p></div>
+      <div class="card"><label><input type="checkbox" onclick="autoDownload(this, 'https://download.pdfforge.org/download/pdfcreator/PDFCreator-5.1.2-Setup.exe')"> PDFCreator</label><p>Création de PDF</p></div>
+      <div class="card"><label><input type="checkbox" onclick="autoDownload(this, 'https://cdn01.foxitsoftware.com/product/reader/desktop/win/12.1.2/FoxitPDFReader1212_L10N_Setup.exe')"> Foxit Reader</label><p>Lecteur PDF rapide</p></div>
+    </div>
+  </section>
+
+  <!-- Média -->
+  <section class="category">
+    <h2>🎬 Média</h2>
+    <div class="grid">
+      <div class="card"><label><input type="checkbox" onclick="autoDownload(this, 'https://get.videolan.org/vlc/3.0.20/win64/vlc-3.0.20-win64.exe')"> VLC</label><p>Lecteur vidéo</p></div>
+      <div class="card"><label><input type="checkbox" onclick="autoDownload(this, 'https://www.audacityteam.org/download/windows/')"> Audacity</label><p>Éditeur audio</p></div>
+      <div class="card"><label><input type="checkbox" onclick="autoDownload(this, 'https://handbrake.fr/rotation.php?file=HandBrake-1.6.1-x86_64-Win_GUI.exe')"> HandBrake</label><p>Convertisseur vidéo</p></div>
+      <div class="card"><label><input type="checkbox" onclick="autoDownload(this, 'https://cdn-fastly.obsproject.com/downloads/OBS-Studio-30.0.2-Full-Installer-x64.exe')"> OBS Studio</label><p>Capture vidéo</p></div>
+    </div>
+  </section>
+
+  <script>
+    function autoDownload(checkbox, url) {
+      if (checkbox.checked) {
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = '';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+    }
+  </script>
+</body>
+</html>
