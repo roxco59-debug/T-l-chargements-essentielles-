@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Télécharge Essentiel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #007BFF;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    section {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+    }
+    h2 {
+      border-bottom: 2px solid #007BFF;
+      padding-bottom: 0.3rem;
+      margin-top: 2rem;
+    }
+    label {
+      display: block;
+      margin: 0.5rem 0;
+    }
+    button {
+      margin-top: 2rem;
+      padding: 0.7rem 1.5rem;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #218838;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #e9ecef;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📦 Télécharge Essentiel</h1>
+    <p>Sélectionnez vos logiciels par thème</p>
+  </header>
+
+  <section>
+    <form id="software-form">
+
+      <!-- Bureautique -->
+      <h2>📑 Bureautique</h2>
+      <label><input type="checkbox" value="https://fr.libreoffice.org/download/libreoffice/"> LibreOffice</label>
+      <label><input type="checkbox" value="https://www.onlyoffice.com/fr/download-desktop.aspx"> OnlyOffice</label>
+      <label><input type="checkbox" value="https://pdfsam.org/fr/download-pdfsam-basic/"> PDFsam Basic</label>
+      <label><input type="checkbox" value="https://www.abisource.com/download/"> AbiWord</label>
+
+      <!-- CAO / DAO -->
+      <h2>📐 CAO / DAO / 3D</h2>
+      <label><input type="checkbox" value="https://www.freecad.org/downloads.php"> FreeCAD</label>
+      <label><input type="checkbox" value="https://www.blender.org/download/"> Blender</label>
+      <label><input type="checkbox" value="https://www.kicad.org/download/"> KiCad</label>
+      <label><input type="checkbox" value="https://solvespace.com/download.pl"> SolveSpace</label>
+
+      <!-- Dessin / Graphisme -->
+      <h2>🎨 Dessin / Graphisme</h2>
+      <label><input type="checkbox" value="https://krita.org/fr/download/krita-desktop/"> Krita</label>
+      <label><input type="checkbox" value="https://inkscape.org/fr/release/"> Inkscape</label>
+      <label><input type="checkbox" value="https://www.gimp.org/downloads/"> GIMP</label>
+      <label><input type="checkbox" value="https://www.pinta-project.com/download"> Pinta</label>
+
+      <!-- Sécurité / Vie privée -->
+      <h2>🛡️ Sécurité / Vie privée</h2>
+      <label><input type="checkbox" value="https://www.veracrypt.fr/fr/Downloads.html"> VeraCrypt</label>
+      <label><input type="checkbox" value="https://clamwin.com/"> ClamWin</label>
+      <label><input type="checkbox" value="https://www.torproject.org/download/"> Tor Browser</label>
+      <label><input type="checkbox" value="https://keepassxc.org/download/"> KeePassXC</label>
+
+      <!-- Éditeurs de texte / Code -->
+      <h2>✍️ Éditeurs de texte / Code</h2>
+      <label><input type="checkbox" value="https://notepad-plus-plus.org/downloads/"> Notepad++</label>
+      <label><input type="checkbox" value="https://code.visualstudio.com/"> Visual Studio Code</label>
+      <label><input type="checkbox" value="https://www.geany.org/Download/Releases"> Geany</label>
+      <label><input type="checkbox" value="https://kate-editor.org/get-it/"> Kate</label>
+
+      <!-- Audio / Vidéo -->
+      <h2>🎵 Audio / Vidéo</h2>
+      <label><input type="checkbox" value="https://www.videolan.org/vlc/"> VLC Media Player</label>
+      <label><input type="checkbox" value="https://www.audacityteam.org/download/"> Audacity</label>
+      <label><input type="checkbox" value="https://obsproject.com/fr/download"> OBS Studio</label>
+      <label><input type="checkbox" value="https://handbrake.fr/downloads.php"> HandBrake</label>
+
+      <button type="button" onclick="downloadSelected()">📥 Télécharger la sélection</button>
+    </form>
+  </section>
+
+  <script>
+    function downloadSelected() {
+      const checked = document.querySelectorAll('input[type="checkbox"]:checked');
+      if (checked.length === 0) {
+        alert("Veuillez sélectionner au moins un logiciel.");
+        return;
+      }
+      checked.forEach(input => window.open(input.value, '_blank'));
+    }
+  </script>
+
+  <footer>
+    &copy; 2025 Télécharge Essentiel — Tous les liens mènent aux sites officiels
+  </footer>
+</body>
+</html>
