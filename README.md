@@ -105,3 +105,48 @@
   </script>
 </body>
 </html>
+<h1>📁 Télécharge Essentiel</h1>
+
+<div class="grid">
+  <div class="card">
+    <h2>📚 Classification informatique</h2>
+    <p>Explore les catégories d’usages informatiques.</p>
+    <a href="Classificationinfotmatique.html">Accéder</a>
+  </div>
+
+  <div class="card">
+    <h2>🧪 Essai 8</h2>
+    <p>Page de test et d’expérimentation.</p>
+    <a href="Essai8.html">Accéder</a>
+  </div>
+
+  <div class="card">
+    <h2>🏠 Index 2</h2>
+    <p>Page d’accueil alternative.</p>
+    <a href="Index2.html">Accéder</a>
+  </div>
+
+  <div class="card">
+    <h2>📄 Index 4</h2>
+    <p>Contenu complémentaire ou structuré.</p>
+    <a href="Index4.html">Accéder</a>
+  </div>
+
+  <div class="card">
+    <h2>📄 Index 6</h2>
+    <p>Suite ou extension du contenu.</p>
+    <a href="Index6.html">Accéder</a>
+  </div>
+
+  <div class="card">
+    <h2>🛠️ Modification 2025</h2>
+    <p>Page dédiée aux mises à jour.</p>
+    <a href="Modification2025.html">Accéder</a>
+  </div>
+
+  <div class="card">
+    <h2>💻 Tableau PC</h2>
+    <p>Tableau comparatif des configurations.</p>
+    <a href="Tableaupc.html">Accéder</a>
+  </div>
+</div>
