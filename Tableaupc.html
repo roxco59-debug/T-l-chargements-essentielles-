@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Usages et configurations PC</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background: #eef4ff; }
+    h1 { color: #003366; }
+    select { padding: 8px; margin-bottom: 20px; }
+    .bloc { display: none; border-left: 5px solid #003366; background: #fff; padding: 15px; margin-bottom: 20px; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
+    .bloc.visible { display: block; }
+    h2 { margin-top: 0; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background: #003366; color: white; }
+    .categorie { font-weight: bold; margin-top: 10px; color: #003366; }
+  </style>
+</head>
+<body>
+
+  <h1>🔍 Filtrer les usages informatiques</h1>
+
+  <label for="filtre">Choisissez une catégorie :</label>
+  <select id="filtre">
+    <option value="">-- Toutes --</option>
+    <option value="pro">Utilisation professionnelle</option>
+    <option value="perso">Utilisation personnelle et loisirs</option>
+    <option value="edu">Utilisation éducative</option>
+    <option value="dom">Utilisation domestique</option>
+    <option value="spec">Utilisation spécialisée</option>
+  </select>
+
+  <!-- Bloc généré dynamiquement ci-dessous -->
+  <div id="contenu"></div>
+
+  <script>
+    const data = {
+      pro: {
+        titre: "💼 Utilisation professionnelle",
+        usages: [
+          { nom: "Bureautique", logiciels: "Microsoft Office, LibreOffice", config: ["Intel i3/i5, Ryzen 3/5", "GPU intégré", "8 Go", "SSD 256 Go", "HD ou Full HD"] },
+          { nom: "Développement logiciel", logiciels: "VS Code, Git, Docker", config: ["Intel i5/i7, Ryzen 5/7", "GPU intégré ou dédié", "16 Go", "SSD 512 Go", "Full HD, double écran"] },
+          { nom: "Graphisme et design", logiciels: "Photoshop, Illustrator, Canva", config: ["Intel i7, Ryzen 7", "NVIDIA GTX/RTX (4 Go+)", "16 Go", "SSD 512 Go", "Full HD IPS calibré"] },
+          { nom: "Modélisation 3D / CAO", logiciels: "AutoCAD, SolidWorks, Blender", config: ["Intel i7/i9, Ryzen 7/9", "NVIDIA Quadro / RTX", "32 Go", "SSD NVMe 1 To", "Full HD ou supérieur"] },
+          { nom: "Montage vidéo / audio", logiciels: "Premiere Pro, DaVinci Resolve, Audacity", config: ["Intel i7, Ryzen 7", "NVIDIA RTX 3060+", "32 Go", "SSD + HDD 1 To", "Full HD ou 4K IPS"] },
+          { nom: "Analyse de données / IA", logiciels: "Python, R, Jupyter", config: ["Intel i7/i9, Ryzen 9", "NVIDIA RTX 3080+", "32 à 64 Go", "SSD NVMe 1 To", "Full HD ou 4K"] }
+        ]
+      },
+      perso: {
+        titre: "🎮 Utilisation personnelle et loisirs",
+        usages: [
+          { nom: "Jeux vidéo", logiciels: "Steam, Epic Games", config: ["Intel i5/i7, Ryzen 5/7", "NVIDIA RTX 3060+", "16 à 32 Go", "SSD NVMe 1 To", "Full HD 144 Hz ou 4K"] },
+          { nom: "Streaming et multimédia", logiciels: "Netflix, VLC, Spotify", config: ["Intel i3/i5, Ryzen 3/5", "GPU intégré", "8 Go", "SSD 256 Go", "Full HD"] },
+          { nom: "Navigation web / réseaux sociaux", logiciels: "Chrome, Firefox, LinkedIn, Instagram", config: ["Intel i3/i5, Ryzen 3/5", "GPU intégré", "8 Go", "SSD 256 Go", "HD ou Full HD"] },
+          { nom: "Création artistique", logiciels: "Krita, FL Studio", config: ["Intel i5/i7, Ryzen 5/7", "NVIDIA GTX / AMD Radeon", "16 Go", "SSD 512 Go", "Full HD IPS"] }
+        ]
+      },
+      edu: {
+        titre: "🎓 Utilisation éducative",
+        usages: [
+          { nom: "Apprentissage en ligne", logiciels: "Moodle, Coursera, Khan Academy", config: ["Intel i3/i5, Ryzen 3/5", "GPU intégré", "8 Go", "SSD 256 Go", "HD ou Full HD"] },
+          { nom: "Recherche et rédaction", logiciels: "Zotero, Word, LaTeX", config: ["Intel i5/i7, Ryzen 5/7", "GPU intégré", "8 à 16 Go", "SSD 512 Go", "Full HD"] },
+          { nom: "Simulation technique", logiciels: "Environnements virtuels", config: ["Intel i7, Ryzen 7", "NVIDIA GTX / RTX", "16 à 32 Go", "SSD NVMe 512 Go+", "Full HD ou supérieur"] }
+        ]
+      },
+      dom: {
+        titre: "🏠 Utilisation domestique",
+        usages: [
+          { nom: "Gestion familiale", logiciels: "Budget, planning", config: ["Intel i3/i5, Ryzen 3/5", "GPU intégré", "8 Go", "SSD 256 Go", "HD ou Full HD"] },
+          { nom: "Domotique et contrôle", logiciels: "Interface web, maison connectée", config: ["Intel NUC / ARM", "GPU intégré", "4 à 8 Go", "SSD 128 Go", "Interface tactile ou web"] },
+          { nom: "Télétravail", logiciels: "Zoom, Teams, AnyDesk", config: ["Intel i5/i7, Ryzen 5/7", "GPU intégré ou dédié", "16 Go", "SSD 512 Go", "Full HD webcam intégrée"] }
+        ]
+      },
+      spec: {
+        titre: "🧩 Utilisation spécialisée",
+        usages: [
+          { nom: "Serveurs / hébergement", logiciels: "Apache, Nginx, MySQL", config: ["Intel Xeon / AMD EPYC", "GPU optionnel", "32 à 128 Go", "SSD + RAID", "Accès distant / CLI"] },
+          { nom: "Ordinateurs embarqués", logiciels: "IoT, contrôle machine", config: ["ARM / Intel Atom", "GPU intégré", "2 à 4 Go", "eMMC / SSD", "Écran industriel ou aucun"] },
+          { nom: "Mini-PC / Raspberry Pi", logiciels: "Linux, projets légers", config: ["ARM Cortex / Broadcom", "GPU intégré", "2 à 8 Go", "microSD / SSD", "HDMI ou interface web"] }
+        ]
+      }
+    };
+
+    const select = document.getElementById('filtre');
+    const container = document.getElementById('contenu');
+
+    function render(type) {
+      container.innerHTML = '';
+      Object.entries(data).forEach(([key, bloc]) => {
+        if (!type || key === type) {
+          const div = document.createElement('div');
+          div.className = 'bloc visible';
+          div.innerHTML = `<h2>${bloc.titre}</h2>`;
+          bloc.usages.forEach(u => {
+            div.innerHTML += `
+              <div class="categorie">${u.nom}</div>
+              <ul><li><strong>Logiciels :</strong> ${u.logiciels}</li></ul>
+              <table>
+                <tr><th>CPU</th><th>GPU</th><th>RAM</th><th>Stockage</th><th>Écran</th></tr>
+                <tr><td>${u.config[0]}</td><td>${u.config[1]}</td><td>${u.config[2]}</td><td>${u.config[3]}</td><td>${u.config[4]}</td></tr>
+              </table>
+            `;
+          });
+          container.appendChild(div);
+        }
+      });
+    }
+
+    select.addEventListener('change', () => render(select.value));
+    render('');
+  </script>
+
+</body>
+</html>
