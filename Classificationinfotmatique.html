@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Usages des ordinateurs</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background: #eef4ff; }
+    h1 { color: #003366; }
+    select { padding: 8px; margin-bottom: 20px; }
+    .bloc { display: none; border-left: 5px solid #003366; background: #fff; padding: 15px; margin-bottom: 20px; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
+    .bloc.visible { display: block; }
+    h2 { margin-top: 0; }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 5px; }
+    .categorie { font-weight: bold; margin-top: 10px; color: #003366; }
+  </style>
+</head>
+<body>
+
+  <h1>🔍 Filtrer les usages informatiques</h1>
+
+  <label for="filtre">Choisissez une catégorie :</label>
+  <select id="filtre">
+    <option value="">-- Toutes --</option>
+    <option value="pro">Utilisation professionnelle</option>
+    <option value="perso">Utilisation personnelle et loisirs</option>
+    <option value="edu">Utilisation éducative</option>
+    <option value="dom">Utilisation domestique</option>
+    <option value="spec">Utilisation spécialisée</option>
+  </select>
+
+  <!-- Utilisation professionnelle -->
+  <div class="bloc" data-type="pro">
+    <h2>💼 Utilisation professionnelle</h2>
+    <div class="categorie">Bureautique</div>
+    <ul>
+      <li>Traitement de texte, tableurs, présentations, e-mails</li>
+      <li>Exemples : Microsoft Office, LibreOffice</li>
+    </ul>
+    <div class="categorie">Développement logiciel</div>
+    <ul>
+      <li>Programmation, compilation, tests</li>
+      <li>Exemples : VS Code, Git, Docker</li>
+    </ul>
+    <div class="categorie">Graphisme et design</div>
+    <ul>
+      <li>Retouche photo, création visuelle, mise en page</li>
+      <li>Exemples : Photoshop, Illustrator, Canva</li>
+    </ul>
+    <div class="categorie">Modélisation 3D / CAO</div>
+    <ul>
+      <li>Architecture, ingénierie, impression 3D</li>
+      <li>Exemples : AutoCAD, SolidWorks, Blender</li>
+    </ul>
+    <div class="categorie">Montage vidéo / audio</div>
+    <ul>
+      <li>Production multimédia</li>
+      <li>Exemples : Premiere Pro, DaVinci Resolve, Audacity</li>
+    </ul>
+    <div class="categorie">Analyse de données / IA</div>
+    <ul>
+      <li>Traitement de gros volumes, machine learning</li>
+      <li>Exemples : Python, R, Jupyter</li>
+    </ul>
+  </div>
+
+  <!-- Utilisation personnelle -->
+  <div class="bloc" data-type="perso">
+    <h2>🎮 Utilisation personnelle et loisirs</h2>
+    <div class="categorie">Jeux vidéo</div>
+    <ul>
+      <li>PC gamer avec GPU dédié</li>
+      <li>Exemples : Steam, Epic Games</li>
+    </ul>
+    <div class="categorie">Streaming et multimédia</div>
+    <ul>
+      <li>Films, musique, podcasts</li>
+      <li>Exemples : Netflix, VLC, Spotify</li>
+    </ul>
+    <div class="categorie">Navigation web et réseaux sociaux</div>
+    <ul>
+      <li>Usage quotidien</li>
+      <li>Exemples : Chrome, Firefox, LinkedIn, Instagram</li>
+    </ul>
+    <div class="categorie">Création artistique</div>
+    <ul>
+      <li>Dessin numérique, musique assistée par ordinateur</li>
+      <li>Exemples : Krita, FL Studio</li>
+    </ul>
+  </div>
+
+  <!-- Utilisation éducative -->
+  <div class="bloc" data-type="edu">
+    <h2>🎓 Utilisation éducative</h2>
+    <div class="categorie">Apprentissage en ligne</div>
+    <ul>
+      <li>Cours, MOOC, certifications</li>
+      <li>Exemples : Moodle, Coursera, Khan Academy</li>
+    </ul>
+    <div class="categorie">Recherche et rédaction</div>
+    <ul>
+      <li>Mémoire, thèse, documentation</li>
+      <li>Exemples : Zotero, Word, LaTeX</li>
+    </ul>
+    <div class="categorie">Simulation et formation technique</div>
+    <ul>
+      <li>Environnements virtuels, logiciels spécialisés</li>
+    </ul>
+  </div>
+
+  <!-- Utilisation domestique -->
+  <div class="bloc" data-type="dom">
+    <h2>🏠 Utilisation domestique</h2>
+    <div class="categorie">Gestion familiale</div>
+    <ul>
+      <li>Budget, planning, stockage de documents</li>
+    </ul>
+    <div class="categorie">Domotique et contrôle</div>
+    <ul>
+      <li>Pilotage de maison connectée</li>
+    </ul>
+    <div class="categorie">Télétravail</div>
+    <ul>
+      <li>Visioconférence, accès distant</li>
+      <li>Exemples : Zoom, Teams, AnyDesk</li>
+    </ul>
+  </div>
+
+  <!-- Utilisation spécialisée -->
+  <div class="bloc" data-type="spec">
+    <h2>🧩 Utilisation spécialisée</h2>
+    <div class="categorie">Serveurs et hébergement</div>
+    <ul>
+      <li>Web, cloud, base de données</li>
+      <li>Exemples : Apache, Nginx, MySQL</li>
+    </ul>
+    <div class="categorie">Ordinateurs embarqués / industriels</div>
+    <ul>
+      <li>Contrôle de machines, IoT</li>
+    </ul>
+    <div class="categorie">Ordinateurs de poche / mini-PC</div>
+    <ul>
+      <li>Raspberry Pi, usage mobile ou discret</li>
+    </ul>
+  </div>
+
+  <script>
+    const select = document.getElementById('filtre');
+    const blocs = document.querySelectorAll('.bloc');
+
+    select.addEventListener('change', function() {
+      const type = this.value;
+      blocs.forEach(el => {
+        el.classList.remove('visible');
+        if (!type || el.dataset.type === type) {
+          el.classList.add('visible');
+        }
+      });
+    });
+
+    // Affiche tout au chargement
+    select.dispatchEvent(new Event('change'));
+  </script>
+
+</body>
+</html>
