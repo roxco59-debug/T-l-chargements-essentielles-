@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Comprendre les configurations PC</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0 20px;
+      background-color: #f9f9f9;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      padding: 10px;
+      background-color: #eaeaea;
+      border-bottom: 2px solid #ccc;
+      margin: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: #ddd;
+    }
+
+    section {
+      margin-top: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f0f0f0;
+    }
+
+    h2, h3 {
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Menu de navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="Index2.html">Téléchargements essentiels</a></li>
+      <li><a href="Classification_informatique.html">Classification informatique</a></li>
+      <li><a href="Essai8.html">Essai 8</a></li>
+      <li><a href="Tableau_PC.html">Tableau PC</a></li>
+      <li><a href="Mise_a_jour.html">Mises à jour</a></li>
+      <li><a href="Liens_utiles.html">Liens utiles</a></li>
+      <li><a href="Test_case.html">Test case</a></li>
+    </ul>
+  </nav>
+
+  <!-- Contenu explicatif -->
+  <section>
+    <h2>Comprendre les composants d’un ordinateur</h2>
+    <p>Pour connaître les composants exacts d’un PC, voici les méthodes recommandées :</p>
+    <ul>
+      <li><strong>Outils intégrés :</strong> <em>dxdiag</em> sous Windows, <em>lscpu</em> ou <em>neofetch</em> sous Linux.</li>
+      <li><strong>Logiciels spécialisés :</strong> Speccy, CPU-Z, HWInfo.</li>
+      <li><strong>Étiquettes ou fiches produit :</strong> utiles pour les PC portables.</li>
+      <li><strong>Ouverture du boîtier :</strong> pour lire les références des composants (RAM, GPU, etc.).</li>
+    </ul>
+
+    <h3>Principaux composants à identifier</h3>
+    <ul>
+      <li>🧠 <strong>Processeur (CPU)</strong> – vitesse de calcul</li>
+      <li>📦 <strong>Mémoire vive (RAM)</strong> – fluidité des tâches</li>
+      <li>💾 <strong>Stockage (SSD/HDD)</strong> – capacité et rapidité</li>
+      <li>🎮 <strong>Carte graphique (GPU)</strong> – jeux, 3D, vidéo</li>
+      <li>🔌 <strong>Carte mère & alimentation</strong> – compatibilité et puissance</li>
+      <li>🖥️ <strong>Système d’exploitation (OS)</strong> – Windows, Linux, macOS</li>
+    </ul>
+
+    <h2>Quelle configuration pour quel usage ?</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Besoin</th>
+          <th>CPU</th>
+          <th>RAM</th>
+          <th>Stockage</th>
+          <th>GPU</th>
+          <th>OS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Bureautique simple</td>
+          <td>Intel i3 / Ryzen 3</td>
+          <td>4–8 Go</td>
+          <td>SSD 256 Go</td>
+          <td>Intégrée</td>
+          <td>Windows / Linux</td>
+        </tr>
+        <tr>
+          <td>Web + vidéo</td>
+          <td>Intel i5 / Ryzen 5</td>
+          <td>8 Go</td>
+          <td>SSD 512 Go</td>
+          <td>Intégrée</td>
+          <td>Windows / Linux</td>
+        </tr>
+        <tr>
+          <td>Graphisme / montage</td>
+          <td>Intel i7 / Ryzen 7</td>
+          <td>16 Go</td>
+          <td>SSD 1 To</td>
+          <td>GTX / RTX</td>
+          <td>Windows / Linux</td>
+        </tr>
+        <tr>
+          <td>Gaming moyen</td>
+          <td>Intel i5 / Ryzen 5</td>
+          <td>16 Go</td>
+          <td>SSD + HDD</td>
+          <td>GTX / RX</td>
+          <td>Windows</td>
+        </tr>
+        <tr>
+          <td>Gaming avancé</td>
+          <td>Intel i9 / Ryzen 9</td>
+          <td>32 Go</td>
+          <td>SSD NVMe</td>
+          <td>RTX 4080+ / RX 7900</td>
+          <td>Windows</td>
+        </tr>
+        <tr>
+          <td>PC léger / nomade</td>
+          <td>Intel N / ARM / M1</td>
+          <td>4–8 Go</td>
+          <td>SSD 128–256 Go</td>
+          <td>Intégrée</td>
+          <td>Linux / macOS</td>
+        </tr>
+        <tr>
+          <td>Serveur / virtualisation</td>
+          <td>Xeon / Threadripper</td>
+          <td>32+ Go</td>
+          <td>SSD + RAID</td>
+          <td>Optionnelle</td>
+          <td>Linux / Pro OS</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</body>
+  </html>
